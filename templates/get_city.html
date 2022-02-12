@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Weather Data{% endblock %}
+
+{% block content %}  
+<section class="vh-100">
+  <div class="container py-5 h-100">
+
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-8 col-lg-6 col-xl-4">
+        <form action="#" method="post">
+          <h3 class="mb-4 pb-2 fw-normal">Check the weather forecast</h3>
+
+          <div class="input-group rounded mb-3">
+            <input type="search" class="form-control rounded" placeholder="City" aria-label="Search" name="city"
+              aria-describedby="search-addon" />
+            <a href="#!" type="button"> 
+              <span class="input-group-text border-0 fw-bold" id="search-addon">  
+              <input type="submit" value="Check">
+              </span>
+            </a>
+          </div>
+            <div >
+                  {% for message in get_flashed_messages() %}
+                    <div class="flash">
+                      <div class="text-danger row d-flex justify-content-center align-items-center h-100" >
+                        {{ message }}
+                      </div>
+                    </div>
+                  {% endfor %}
+            </div>
+        </form>  
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endblock %}
+
